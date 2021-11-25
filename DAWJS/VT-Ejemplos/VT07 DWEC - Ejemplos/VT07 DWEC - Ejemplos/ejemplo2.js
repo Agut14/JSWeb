@@ -19,14 +19,17 @@ function usuarioCorrecto(nombre){
 
 function compruebaNombre(elemento){
 	let nombreUsuario = elemento.value;
+	let error = document.getElementById("errorUsuario");
 	if (usuarioCorrecto(nombreUsuario)) {
 		console.log("correcto");
 		elemento.classList.add("bordeVerde");
 		elemento.classList.remove("bordeRojo");
+		error.innerHTML = " ";
 	} else {
 		console.log("incorrecto");
 		elemento.classList.add("bordeRojo");
 		elemento.classList.remove("bordeVerde");
+		error.innerHTML = "Introduce un nombre correcto.";
 	}
 }
 
