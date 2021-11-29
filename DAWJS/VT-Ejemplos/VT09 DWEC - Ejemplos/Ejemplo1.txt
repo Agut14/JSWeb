@@ -1,0 +1,22 @@
+Palabras que empiezan con una mayúscula
+[A-Z]+[a-z]*
+
+
+Palabras que contengan un número
+[A-z]*[0-9]+[A-z]*
+
+
+Usuario de Twitter
+^@{1}(\w){1,15}$
+
+
+Correo electrónico
+[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4} 
+
+
+Número de teléfono
+(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}
+
+
+Fecha
+/^(\d{1,2})[/](\d{1,2})[/](\d{3,4})$/ 
