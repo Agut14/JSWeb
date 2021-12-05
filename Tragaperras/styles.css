@@ -1,0 +1,16 @@
+body{
+    padding: 10px;
+    margin: 0 auto;
+}
+
+div{
+    display: inline-block;
+}
+
+img {
+    max-width: 150px;
+}
+
+#monedero {
+    font-size: 40px;
+}
