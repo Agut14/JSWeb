@@ -3,6 +3,14 @@ body{
     margin: 0 auto;
 }
 
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
 div{
     display: inline-block;
 }

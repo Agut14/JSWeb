@@ -31,7 +31,25 @@ window.addEventListener("load", function(e){
     var url = window.location.href;
     var arr = url.split("/");
     var urlSrc = arr[0] + "//" + arr[2];
+
     
+
+
+    //ocultar o mostrar historial
+    const mostrarOcultar = document.querySelector("#manejoHistorial");
+
+    mostrarOcultar.addEventListener("click", function() {
+    
+        if(historial.classList.contains('mostrar')){
+            historial.classList.add('ocultar');
+            historial.classList.remove('mostrar');
+            this.textContent = "Mostrar historial";
+        }else {
+            historial.classList.remove('ocultar');
+            historial.classList.add('mostrar');
+            this.textContent = "Ocultar historial";
+        }
+    })
     
 
     //función cuando haga click en input "introducir"
@@ -83,6 +101,8 @@ window.addEventListener("load", function(e){
     //selecciono las demás imagenes
     let imagen = document.getElementsByTagName("img");
 
+    
+
     //cuando aprieto el ratón, se cambia la imagen de la palanca
    palanca.addEventListener("mousedown", function(){
     imagen[3].src= "img/palancaDOWN.png";
@@ -101,7 +121,7 @@ window.addEventListener("load", function(e){
         imagen[2].src = "img/" + listaImagenes[(Math.floor(Math.random()*10))] + ".png";
 
         
-
+        
         //gasto moneda
         monedasMonedero -=1;
         monedero.innerHTML = monedasMonedero;
@@ -110,8 +130,8 @@ window.addEventListener("load", function(e){
 
         //estructura condicional para asignar el premio
         //si hay por lo menos una moneda..
-        if(imagen[0].src == urlSrc + "/img/dollar.png" || imagen[1].src == urlSrc + "/img/dollar.png"
-            || imagen[2].src == urlSrc + "/img/dollar.png"){
+        if(imagen[0].src == urlSrc + "/Tragaperras/img/dollar.png" || imagen[1].src == urlSrc + "/Tragaperras/img/dollar.png"
+            || imagen[2].src == urlSrc + "/Tragaperras/img/dollar.png"){
                 //si hay 3 monedas
             if(imagen[0].src == imagen[2].src && imagen[1].src == imagen[0].src 
             && imagen[2].src == imagen[0].src){
@@ -120,17 +140,17 @@ window.addEventListener("load", function(e){
                 monedero.innerHTML = monedasMonedero;
                 pintarHistorial("¡TRES MONEDAS! Ganas 10 monedas.");
                 //si hay dos monedas
-            }else if((imagen[0].src == urlSrc + "/img/dollar.png" && imagen[0].src == imagen[1].src) || 
-                    (imagen[0].src == urlSrc + "/img/dollar.png" && imagen[0].src == imagen[2].src) || 
-                    imagen[1].src == urlSrc + "/img/dollar.png" && imagen[1].src == imagen[2].src){
+            }else if((imagen[0].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[0].src == imagen[1].src) || 
+                    (imagen[0].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[0].src == imagen[2].src) || 
+                    imagen[1].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[1].src == imagen[2].src){
 
                         monedasMonedero += 4;
                         monedero.innerHTML = monedasMonedero;
                         pintarHistorial("¡DOS MONEDAS! Ganas 4 monedas.");
                 //si hay una moneda y dos frutas
-            }else if((imagen[0].src == urlSrc + "/img/dollar.png" && imagen[1].src == imagen[2].src) || 
-                    (imagen[1].src == urlSrc + "/img/dollar.png" && imagen[0].src == imagen[2].src) ||
-                    imagen[2].src == urlSrc + "/img/dollar.png" && imagen[0].src == imagen[1].src){
+            }else if((imagen[0].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[1].src == imagen[2].src) || 
+                    (imagen[1].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[0].src == imagen[2].src) ||
+                    imagen[2].src == urlSrc + "/Tragaperras/img/dollar.png" && imagen[0].src == imagen[1].src){
 
                         monedasMonedero += 3;
                         monedero.innerHTML = monedasMonedero;
@@ -164,6 +184,11 @@ window.addEventListener("load", function(e){
             }
     } 
 });
+
+monedero.addEventListener("blur", () => {
+    monedero.innerHTML = monedasMonedero;
+    console.log("blur");
+})
    
 
     
