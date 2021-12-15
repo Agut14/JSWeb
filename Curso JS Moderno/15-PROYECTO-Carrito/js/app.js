@@ -5,7 +5,7 @@ const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const listaCursos = document.querySelector("#lista-cursos");
 let articulosCarrito = [];
 
-
+//conjunto de even listeners
 registrarEventListeners();
 function registrarEventListeners(){
     //agregar curso pulsando "Agregar al carrito"
