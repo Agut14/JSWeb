@@ -1,0 +1,20 @@
+
+    <h1>Heroe!</h1>
+
+    <dl>
+        <td>Nombre:</td>
+        <dd>{{ nombre }}</dd>
+
+        <td>Nombre Mayus:</td>
+        <dd>{{ nombreMayus }}</dd>
+
+        <td>Edad:</td>
+        <dd>{{ edad }}</dd>
+
+        <td>Función:</td>
+        <dd>{{ obtenerNombre() }}</dd>
+
+    </dl>
+
+    <button (click)="cambiarNombre()">Cambiar Heroe</button>
+    <button (click)="cambiarEdad()">Cambiar edad</button>
