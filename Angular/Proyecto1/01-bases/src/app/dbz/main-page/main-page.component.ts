@@ -11,22 +11,8 @@ export class MainPageComponent {
 
   personajes: Personaje[] = []
 
-  nuevoPersonaje:Personaje = {
-    nombre: '',
-    poder: 0
-  }
-  agregar(){
-    if(this.nuevoPersonaje.nombre.trim().length === 0){
-      return;
-    }else {
-      this.personajes.push(this.nuevoPersonaje);
-      this.nuevoPersonaje = {
-        nombre: '',
-        poder: 0
-      }
-    }
-    console.log(this.personajes);
-  
+  agregarNuevoPersonaje( arg: Personaje ){
+    this.personajes.push( arg );
   }
 }
 
