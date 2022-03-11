@@ -1,0 +1,27 @@
+<table *ngIf="capitales.length > 0" class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Población</th>
+            <th>Capital</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let capital of capitales">
+            <td>{{ capital.alpha3Code }}</td>
+            <td><img class="small-flag" src="{{ capital.flag }}" alt=""></td>
+            <td>{{ capital.name }}</td>
+            <td>{{ capital.population | number }}</td>
+            <td>{{ capital.capital }}</td>
+            <td>
+                <a [routerLink]="['/pais', capital.alpha3Code]" routerLinkActive="router-link-active" >Ver...</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
