@@ -32,11 +32,5 @@ export class PorPaisComponent {
     });
   }
 
-  sugerencias( termino:string ){
-    this.errorExist = false;
-    this.buscar( termino );
-
-  }
-
 
 }

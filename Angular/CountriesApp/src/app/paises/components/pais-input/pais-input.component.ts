@@ -27,12 +27,7 @@ export class PaisInputComponent implements OnInit {
     } )
   }
 
-
   constructor() { }
-
-  emitirEvento() {
-    this.onEnter.emit( this.termino )
-  }
 
 
   teclaPresionada() {
